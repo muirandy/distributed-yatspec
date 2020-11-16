@@ -1,13 +1,20 @@
 package com.github.muirandy.docs.yatspec.distributed;
 
 public class Log {
-    private final String source;
-    private final String target;
-    private final Object message;
+    private final String message;
+    private final Object body;
 
-    public Log(String source, String target, Object message) {
-        this.source = source;
-        this.target = target;
+    public Log(String message, Object body) {
         this.message = message;
+        this.body = body;
+    }
+
+
+    public String getMessage() {
+        return message;
+    }
+
+    public Object getBody() {
+        return body;
     }
 }

@@ -10,6 +10,8 @@ public class SequenceDiagramFacade {
     }
 
     public void generate(TestState testState) {
+        Logs logs = diagramLogger.read();
+        logs.getLogs().forEach(l -> testState.log(l.getMessage(), l.getBody()));
     }
 
     public void log(Log log) {
