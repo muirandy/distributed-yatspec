@@ -5,9 +5,9 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class Log {
     private final String message;
-    private final Object body;
+    private final String body;
 
-    public Log(String message, Object body) {
+    public Log(String message, String body) {
         this.message = message;
         this.body = body;
     }
@@ -17,7 +17,7 @@ public class Log {
         return message;
     }
 
-    public Object getBody() {
+    public String getBody() {
         return body;
     }
 

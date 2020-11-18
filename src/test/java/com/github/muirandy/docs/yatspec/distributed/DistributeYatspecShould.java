@@ -14,7 +14,7 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class DistributeYatspecShould {
     private static final String MESSAGE = "Message";
-    private static final Object BODY = "Body";
+    private static final String BODY = "Body";
 
     private TestState testState = new TestState();
 
