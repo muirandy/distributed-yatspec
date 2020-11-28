@@ -1,5 +1,9 @@
 package com.github.muirandy.docs.yatspec.distributed;
 
+import com.github.muirandy.docs.living.api.DiagramLogger;
+import com.github.muirandy.docs.living.api.Log;
+import com.github.muirandy.docs.living.api.Logs;
+import com.github.muirandy.docs.living.api.SequenceDiagramFacade;
 import com.googlecode.yatspec.state.givenwhenthen.TestState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

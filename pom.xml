@@ -44,6 +44,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>com.github.muirandy</groupId>
+            <artifactId>distributed-living-documentation-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.nickmcdowall</groupId>
             <artifactId>yatspec</artifactId>
             <version>2020.3.2</version>

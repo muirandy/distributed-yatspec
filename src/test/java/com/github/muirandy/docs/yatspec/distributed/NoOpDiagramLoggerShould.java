@@ -1,5 +1,8 @@
 package com.github.muirandy.docs.yatspec.distributed;
 
+import com.github.muirandy.docs.living.api.DiagramLogger;
+import com.github.muirandy.docs.living.api.Log;
+import com.github.muirandy.docs.living.api.Logs;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
