@@ -7,7 +7,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.stubbing.OngoingStubbing;
 
 import java.util.UUID;
 
@@ -31,13 +30,13 @@ public class DistributeYatspecShould {
 
     @BeforeEach
     void setUp() {
-        sequenceDiagramFacade = new SequenceDiagramFacade(diagramLogger);
+        sequenceDiagramFacade = new YatspecSequenceDiagramFacade(diagramLogger, testState);
         lenient().when(diagramLogger.read()).thenReturn(logs);
     }
 
     @Test
     void generateNothingIfNoLogs() {
-        sequenceDiagramFacade.generate(testState);
+        sequenceDiagramFacade.generate();
 
         assertThat(testState.getCapturedTypes()).isEmpty();
     }
@@ -53,7 +52,7 @@ public class DistributeYatspecShould {
     void generateWhenDiagramLoggerReturnContent() {
         logs.add(log);
 
-        sequenceDiagramFacade.generate(testState);
+        sequenceDiagramFacade.generate();
 
         assertThat(testState.getCapturedTypes().size()).isEqualTo(1);
     }
@@ -62,7 +61,7 @@ public class DistributeYatspecShould {
     void logEndMarkerIsWrittenBeforeReadingSequenceDiagramLogs() {
         when(diagramLogger.read(SEQUENCE_DIAGRAM_ID)).thenReturn(logs);
 
-        sequenceDiagramFacade.generate(testState, SEQUENCE_DIAGRAM_ID);
+        sequenceDiagramFacade.generate(SEQUENCE_DIAGRAM_ID);
 
         InOrder inOrder = inOrder(diagramLogger);
         inOrder.verify(diagramLogger).markEnd(SEQUENCE_DIAGRAM_ID);
